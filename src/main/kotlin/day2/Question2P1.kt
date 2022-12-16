@@ -1,5 +1,6 @@
 package day2
 
+import day2.models.Strategy
 import utils.Question
 
 class Question2P1(override val inputFilePath: String) : Question<Int> {
