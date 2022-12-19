@@ -2,6 +2,7 @@ package day5
 
 import utils.Question
 
+// https://adventofcode.com/2022/day/5
 class Question5(override val day: String) : Question<Int> {
 
     private val inputList = getInput()

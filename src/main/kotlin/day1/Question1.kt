@@ -38,6 +38,6 @@ class Question1(override val day: String) : Question<Int> {
         }
 
         totalCaloriesList.sortDescending()
-        return totalCaloriesList[0] + totalCaloriesList[1] + totalCaloriesList[2]
+        return totalCaloriesList.subList(0, 3).sum()
     }
 }

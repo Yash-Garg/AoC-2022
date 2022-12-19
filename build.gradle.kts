@@ -14,9 +14,10 @@ repositories { mavenCentral() }
 
 dependencies { testImplementation(kotlin("test")) }
 
-tasks.test { useJUnitPlatform() }
-
-tasks.withType<KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
+tasks.apply {
+    withType<KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
+    test { useJUnitPlatform() }
+}
 
 application { mainClass.set("MainKt") }
 
