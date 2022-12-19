@@ -3,6 +3,7 @@ import day1.Question1P2
 import day2.Question2P1
 import day2.Question2P2
 import day3.Question3P1
+import day3.Question3P2
 import utils.Question
 
 fun main() {
@@ -14,13 +15,15 @@ fun main() {
     val question2p1 = Question2P1("$currentDir/day2/$inputFile")
     val question2p2 = Question2P2("$currentDir/day2/$inputFile")
     val question3p1 = Question3P1("$currentDir/day3/$inputFile")
+    val question3p2 = Question3P2("$currentDir/day3/$inputFile")
 
     listOf(
         question1p1,
         question1p2,
         question2p1,
         question2p2,
-        question3p1
+        question3p1,
+        question3p2
     ).forEach(::log)
 }
 
