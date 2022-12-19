@@ -2,6 +2,7 @@ import day1.Question1
 import day2.Question2
 import day3.Question3
 import day4.Question4
+import day5.Question5
 import utils.Question
 
 fun main() {
@@ -9,8 +10,9 @@ fun main() {
     val question2 = Question2("day2")
     val question3 = Question3("day3")
     val question4 = Question4("day4")
+    val question5 = Question5("day5")
 
-    listOf(question1, question2, question3, question4).forEach(::log)
+    listOf(question1, question2, question3, question4, question5).forEach(::log)
 }
 
 internal fun log(ques: Question<*>) {

@@ -3,7 +3,9 @@ package day2.models
 import java.lang.IllegalArgumentException
 
 enum class Strategy {
-    Rock, Paper, Scissors;
+    Rock,
+    Paper,
+    Scissors;
 
     companion object {
         const val winningPoints = 6
@@ -19,9 +21,12 @@ enum class Strategy {
 
         fun valueFor(strategy: String): Strategy {
             return when (strategy) {
-                "A", "X" -> Rock
-                "B", "Y" -> Paper
-                "C", "Z" -> Scissors
+                "A",
+                "X" -> Rock
+                "B",
+                "Y" -> Paper
+                "C",
+                "Z" -> Scissors
                 else -> throw IllegalArgumentException()
             }
         }

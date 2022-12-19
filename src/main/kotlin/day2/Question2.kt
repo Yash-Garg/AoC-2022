@@ -21,19 +21,21 @@ class Question2(override val day: String) : Question<Int> {
             }
 
             if (oppOption != myOption) {
-                score += when (oppOption) {
-                    Strategy.Rock -> if (myOption == Strategy.Paper) {
-                        Strategy.winningPoints
-                    } else 0
-
-                    Strategy.Paper -> if (myOption == Strategy.Scissors) {
-                        Strategy.winningPoints
-                    } else 0
-
-                    Strategy.Scissors -> if (myOption == Strategy.Rock) {
-                        Strategy.winningPoints
-                    } else 0
-                } + Strategy.pointsFor(myOption)
+                score +=
+                    when (oppOption) {
+                        Strategy.Rock ->
+                            if (myOption == Strategy.Paper) {
+                                Strategy.winningPoints
+                            } else 0
+                        Strategy.Paper ->
+                            if (myOption == Strategy.Scissors) {
+                                Strategy.winningPoints
+                            } else 0
+                        Strategy.Scissors ->
+                            if (myOption == Strategy.Rock) {
+                                Strategy.winningPoints
+                            } else 0
+                    } + Strategy.pointsFor(myOption)
             } else {
                 score += Strategy.pointsFor(myOption) + Strategy.drawPoints
             }
@@ -55,21 +57,22 @@ class Question2(override val day: String) : Question<Int> {
             }
 
             with(Strategy) {
-                score += when (action) {
-                    Action.WIN -> when (oppOption) {
-                        Strategy.Rock -> pointsFor(Strategy.Paper)
-                        Strategy.Paper -> pointsFor(Strategy.Scissors)
-                        Strategy.Scissors -> pointsFor(Strategy.Rock)
-                    } + winningPoints
-
-                    Action.LOSE -> when (oppOption) {
-                        Strategy.Rock -> pointsFor(Strategy.Scissors)
-                        Strategy.Paper -> pointsFor(Strategy.Rock)
-                        Strategy.Scissors -> pointsFor(Strategy.Paper)
+                score +=
+                    when (action) {
+                        Action.WIN ->
+                            when (oppOption) {
+                                Strategy.Rock -> pointsFor(Strategy.Paper)
+                                Strategy.Paper -> pointsFor(Strategy.Scissors)
+                                Strategy.Scissors -> pointsFor(Strategy.Rock)
+                            } + winningPoints
+                        Action.LOSE ->
+                            when (oppOption) {
+                                Strategy.Rock -> pointsFor(Strategy.Scissors)
+                                Strategy.Paper -> pointsFor(Strategy.Rock)
+                                Strategy.Scissors -> pointsFor(Strategy.Paper)
+                            }
+                        Action.DRAW -> pointsFor(oppOption) + drawPoints
                     }
-
-                    Action.DRAW -> pointsFor(oppOption) + drawPoints
-                }
             }
         }
 
