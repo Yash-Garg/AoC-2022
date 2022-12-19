@@ -16,6 +16,10 @@ class Question4(override val day: String) : Question<Int> {
         return (pair.first in first..second) && (pair.second in first..second)
     }
 
+    private fun Pair<Int, Int>.overlap(pair: Pair<Int, Int>): Boolean {
+        return (pair.first in first..second) || (pair.second in first..second)
+    }
+
     override fun part1(): Int {
         var numPairs = 0
 
@@ -32,6 +36,17 @@ class Question4(override val day: String) : Question<Int> {
     }
 
     override fun part2(): Int {
-        return 0
+        var overlappingPairs = 0
+
+        inputList.forEach {
+            val pairs = it.split(",")
+
+            val p1 = pairs.first().pair
+            val p2 = pairs.last().pair
+
+            if (p1.overlap(p2) || p2.overlap(p1)) overlappingPairs++
+        }
+
+        return overlappingPairs
     }
 }
