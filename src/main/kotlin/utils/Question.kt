@@ -3,6 +3,7 @@ package utils
 interface Question<T> {
     val inputFilePath: String
 
-    fun solve(): T
+    fun part1(): T
+    fun part2(): T
     fun getInput() = FileUtils.readFile(inputFilePath)
 }
