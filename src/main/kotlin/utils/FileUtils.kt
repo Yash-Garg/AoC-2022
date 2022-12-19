@@ -13,3 +13,5 @@ object FileUtils {
         return fileReader.readLines()
     }
 }
+
+fun emptyString() = ""
