@@ -2,7 +2,7 @@ package day1
 
 import utils.Question
 
-class Question1(override val inputFilePath: String) : Question<Int> {
+class Question1(override val day: String) : Question<Int> {
 
     private val inputList = getInput()
 

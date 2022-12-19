@@ -4,7 +4,7 @@ import utils.Question
 import utils.emptyString
 import java.lang.IllegalArgumentException
 
-class Question3(override val inputFilePath: String) : Question<Int> {
+class Question3(override val day: String) : Question<Int> {
 
     private val inputList = getInput()
 

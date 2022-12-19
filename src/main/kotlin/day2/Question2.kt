@@ -4,7 +4,7 @@ import day2.models.Action
 import day2.models.Strategy
 import utils.Question
 
-class Question2(override val inputFilePath: String) : Question<Int> {
+class Question2(override val day: String) : Question<Int> {
 
     private val inputList = getInput()
 
