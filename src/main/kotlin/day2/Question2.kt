@@ -3,6 +3,7 @@ package day2
 import day2.models.Action
 import day2.models.Strategy
 import utils.Question
+import utils.SPACE_DELIM
 
 class Question2(override val day: String) : Question<Int> {
 
@@ -51,7 +52,7 @@ class Question2(override val day: String) : Question<Int> {
             lateinit var oppOption: Strategy
             lateinit var action: Action
 
-            value.split(" ").apply {
+            value.split(SPACE_DELIM).apply {
                 oppOption = Strategy.valueFor(first())
                 action = Action.valueFor(last())
             }

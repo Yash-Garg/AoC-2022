@@ -15,3 +15,4 @@ object FileUtils {
 }
 
 fun emptyString() = ""
+const val SPACE_DELIM = " "
